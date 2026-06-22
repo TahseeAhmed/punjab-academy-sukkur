@@ -8,7 +8,15 @@ const { errorHandler, notFound } = require("./middleware/errorHandler");
 const app = express();
 
 app.set("etag", false);
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://punjab-academy-sukkur-yyl2.vercel.app",
+      "http://localhost:5173",
+    ],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
