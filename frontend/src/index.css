@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-paper: #faf8f3;
+  --color-surface: #ffffff;
+  --color-ink: #211f1a;
+  --color-ink-muted: #6b675c;
+  --color-border: #e6e1d4;
+  --color-border-strong: #d4cdb9;
+
+  --color-forest: #1b4332;
+  --color-forest-light: #2d6a4f;
+  --color-forest-dark: #122e22;
+  --color-forest-50: #eaf2ee;
+
+  --color-gold: #c9952c;
+  --color-gold-light: #e3b655;
+  --color-gold-50: #faf1df;
+
+  --color-danger: #b3261e;
+  --color-danger-50: #fbe9e7;
+  --color-success: #2d6a4f;
+  --color-success-50: #e8f3ec;
+  --color-warning: #c9952c;
+  --color-warning-50: #faf1df;
+}
+
+html, body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold-50);
+  color: var(--color-forest-dark);
+}
+
+.ledger-bg {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 38px,
+    var(--color-border) 39px
+  );
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-muted); }
