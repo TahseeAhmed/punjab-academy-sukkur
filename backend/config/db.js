@@ -23,7 +23,7 @@ const connectDB = async () => {
   } catch (error) {
     cached.promise = null;
     console.error(`MongoDB connection error: ${error.message}`);
-    throw error; // let Vercel log it, don't call process.exit()
+    throw error;
   }
 
   return cached.conn;

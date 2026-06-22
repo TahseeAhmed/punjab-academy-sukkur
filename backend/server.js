@@ -44,11 +44,9 @@ app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 app.use(notFound);
 app.use(errorHandler);
 
-// For local development
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
 
-// For Vercel serverless
 module.exports = app;
