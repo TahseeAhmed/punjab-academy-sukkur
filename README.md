@@ -1,54 +1,61 @@
-Punjab Academy Sukkur — Management System
+# Punjab Academy Sukkur — Management System
 
-A web-based academy management system built for Punjab Academy Sukkur to digitize student records, attendance, fee collection, academics, and internal communication.
+A web-based management system that digitizes the daily operations of Punjab Academy Sukkur — student records, attendance, fee collection, exam results, and internal communication.
 
-Live
-URLApphttps://punjab-academy-sukkur.vercel.appAPIhttps://punjab-academy-sukkur-yyl2.vercel.app
-Stack
-LayerTechnologyFrontendReact 19, Vite, Tailwind CSS v4, React RouterBackendNode.js, Express, JWT, bcryptDatabaseMongoDB AtlasHostingVercel
-Features
+## Live
 
-Role-based dashboards — Admin, Teacher, Student
-Student registration, profiles, class assignment
-Daily attendance marking with monthly reports
-Fee management — per-student or per-class, partial/full payments, auto receipts
-Assignments and exam results with auto-graded result cards
-Notices with audience targeting (all / teachers / students / class)
-Password management for all roles
+- **Application:**https://punjab-academy-sukkur-yyl2.vercel.app
+- **API:** https://punjab-academy-sukkur.vercel.app
 
-Local Setup
-bash# Backend
-cd backend && npm install
-cp .env.example .env   # fill in MONGO_URI and JWT_SECRET
-npm run seed           # creates first admin (run once)
-npm run dev            # http://localhost:5000
+## Tech Stack
 
-# Frontend (new terminal)
-cd frontend && npm install
-npm run dev            # http://localhost:5173
-Default Login
-Email:    admin@punjabacademy.com
-Password: Admin@123
+- **Frontend:** React 19, Vite, Tailwind CSS v4, React Router, Axios
+- **Backend:** Node.js, Express.js, JWT, bcrypt
+- **Database:** MongoDB, Mongoose, MongoDB Atlas
+- **Hosting:** Vercel
 
-Change the password immediately after first login.
+## Modules
 
-Project Structure
-punjab-academy/
-├── backend/
-│   ├── config/         Database connection
-│   ├── controllers/    Business logic
-│   ├── middleware/     Auth, roles, error handling
-│   ├── models/         Mongoose schemas
-│   ├── routes/         API routes
-│   ├── utils/          Seed script
-│   └── server.js
-└── frontend/
-    └── src/
-        ├── api/        Axios client
-        ├── components/ UI primitives, layout
-        ├── context/    Auth context
-        └── pages/      Role-based pages
-API Health Check
-GET /api/health
+- **Authentication** — JWT login, role-based access (Admin, Teacher, Student), password management
+- **Student Management** — Registration, profiles, class assignment, search and filter
+- **Teacher Management** — Registration, subject and class assignment
+- **Attendance** — Daily marking, student history, monthly reports
+- **Fee Management** — Fee creation, partial/full payments, auto receipt numbers, monthly collection reports
+- **Academics** — Assignments, exam result entry, auto-graded result cards
+- **Notices** — Announcements with audience targeting (all, teachers, students, specific class)
+- **Dashboards** — Role-specific overview with live statistics
 
-Built with the MERN stack. Deployed on Vercel + MongoDB Atlas.
+## Local Setup
+
+```bash
+# Backend
+cd backend
+npm install
+cp .env.example .env
+npm run seed
+npm run dev
+
+# Frontend
+cd frontend
+npm install
+npm run dev
+```
+
+## Environment Variables
+
+```env
+NODE_ENV=development
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+ADMIN_EMAIL=admin@punjabacademy.com
+ADMIN_PASSWORD=yourpassword
+```
+
+## Deployment
+
+Deployed on **Vercel** (frontend + backend serverless) with **MongoDB Atlas** as the database.
+
+## License
+
+Developed for Punjab Academy Sukkur. All rights reserved.
